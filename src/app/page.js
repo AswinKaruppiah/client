@@ -1,5 +1,7 @@
 "use client";
 
+import TemplateModal from "@/components/flyer-demo/Template-modal";
+import TemplatesDesigns from "@/components/flyer-demo/templates";
 import AiFeatures from "@/components/home/ai-features";
 import Banner from "@/components/home/banner";
 import DesignTypes from "@/components/home/design-types";
@@ -52,10 +54,13 @@ export default function Home() {
       <SideBar />
       <div className="flex-1 flex flex-col ml-[72px]">
         <Header />
-        <main className="flex-1 p-6 overflow-y-auto pt-20">
+        <main className="w-full p-6 overflow-y-auto pt-20">
           <Banner />
           <DesignTypes />
           <AiFeatures />
+          {/* <div className="mb-10">
+            <TemplatesDesigns />
+          </div> */}
           <RecentDesigns />
         </main>
       </div>
@@ -64,6 +69,13 @@ export default function Home() {
         onClose={setShowPremiumModal}
       />
       <DesignModal
+        isOpen={showDesignsModal}
+        onClose={setShowDesignsModal}
+        userDesigns={userDesigns}
+        setShowDesignsModal={setShowDesignsModal}
+        userDesignsLoading={userDesignsLoading}
+      />
+      <TemplateModal
         isOpen={showDesignsModal}
         onClose={setShowDesignsModal}
         userDesigns={userDesigns}

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { generateRealEstateFlyerContent } from "@/services/ai-service";
 import { Home, Sparkles, Download, Edit3 } from "lucide-react";
+import TemplatesDesigns from "@/components/flyer-demo/templates";
 
 export default function FlyerDemoPage() {
   const [description, setDescription] = useState("");
@@ -59,6 +60,8 @@ export default function FlyerDemoPage() {
             flyer for you.
           </p>
         </div>
+
+        <TemplatesDesigns />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Section */}

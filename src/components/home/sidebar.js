@@ -56,6 +56,11 @@ function SideBar() {
             active: false,
           },
           {
+            icon: <FolderOpen className="h-6 w-6" />,
+            label: "Templates",
+            active: false,
+          },
+          {
             icon: <CreditCard className="h-6 w-6" />,
             label: "Billing",
             active: false,
@@ -65,7 +70,8 @@ function SideBar() {
             onClick={
               menuItem.label === "Billing"
                 ? () => setShowPremiumModal(true)
-                : menuItem.label === "Projects"
+                : menuItem.label === "Projects" ||
+                  menuItem.label === "Templates"
                 ? () => setShowDesignsModal(true)
                 : null
             }
