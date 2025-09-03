@@ -56,11 +56,6 @@ function SideBar() {
             active: false,
           },
           {
-            icon: <FolderOpen className="h-6 w-6" />,
-            label: "Templates",
-            active: false,
-          },
-          {
             icon: <CreditCard className="h-6 w-6" />,
             label: "Billing",
             active: false,

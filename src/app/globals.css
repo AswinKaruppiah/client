@@ -407,3 +407,46 @@
 .upgrade-button:hover {
   transform: translateY(-1px);
 }
+
+/* Flyer Mode Styles */
+.flyer-mode-indicator {
+  @apply text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded font-medium;
+}
+
+/* Real Estate Flyer Specific Styles */
+.real-estate-flyer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.real-estate-flyer .flyer-title {
+  @apply text-4xl font-bold text-blue-900;
+}
+
+.real-estate-flyer .flyer-subtitle {
+  @apply text-xl text-gray-700;
+}
+
+.real-estate-flyer .flyer-features {
+  @apply text-lg font-semibold text-gray-800;
+}
+
+.real-estate-flyer .flyer-details {
+  @apply text-base text-gray-600;
+}
+
+.real-estate-flyer .flyer-cta {
+  @apply text-2xl font-bold text-red-600;
+}
+
+/* Disable movement for flyer mode */
+.flyer-mode .canvas-container {
+  pointer-events: none;
+}
+
+.flyer-mode .canvas-container canvas {
+  pointer-events: auto;
+}
+
+.flyer-mode .canvas-container .upper-canvas {
+  pointer-events: auto;
+}
