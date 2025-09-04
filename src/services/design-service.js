@@ -18,6 +18,16 @@ export async function saveDesign(designData, designId = null) {
   });
 }
 
+export async function generateFile(designData, designId) {
+  return fetchWithAuth(`/v1/designs/generate`, {
+    method: "POST",
+    body: {
+      ...designData,
+      designId,
+    },
+  });
+}
+
 export async function deleteDesign(designId) {
   return fetchWithAuth(`/v1/designs/${designId}`, {
     method: "DELETE",

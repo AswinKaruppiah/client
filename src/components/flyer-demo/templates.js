@@ -11,7 +11,8 @@ function DesignList({
   isLoading,
   isModalView,
   setShowDesignsModal,
-  edit = true,
+  onClickFun,
+  active,
 }) {
   const router = useRouter();
   const { setUserDesigns } = useEditorStore();
@@ -40,16 +41,14 @@ function DesignList({
     >
       {!listOfDesigns.length && <h1>No Design Found!</h1>}
       {listOfDesigns.map((design) => (
-        <div key={design._id} className={`group ${edit && "cursor-pointer"} `}>
-          <div
-            onClick={() => {
-              if (edit) {
-                router.push(`/editor/${design?._id}`);
-                if (isModalView) setShowDesignsModal(false);
-              }
-            }}
-            className="w-[300px] h-[300px] rounded-lg mb-2 overflow-hidden transition-shadow group-hover:shadow-md"
-          >
+        <div
+          onClick={() => onClickFun(design._id)}
+          key={design._id}
+          className={`group p-4 ${
+            active === design._id && "border-2 rounded-2xl border-black"
+          } ${onClickFun && "cursor-pointer"} `}
+        >
+          <div className="w-full h-[300px] rounded-lg mb-2 overflow-hidden transition-shadow group-hover:shadow-md">
             {design?.canvasData && (
               <DesignPreview key={design._id} design={design} />
             )}
