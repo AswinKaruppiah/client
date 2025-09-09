@@ -26,6 +26,8 @@ export default function Home() {
     userDesigns,
     setUserDesignsLoading,
     userDesignsLoading,
+    setShowTemplateModal,
+    showTemplateModal,
   } = useEditorStore();
 
   const fetchUserSubscription = async () => {
@@ -76,10 +78,10 @@ export default function Home() {
         userDesignsLoading={userDesignsLoading}
       />
       <TemplateModal
-        isOpen={showDesignsModal}
-        onClose={setShowDesignsModal}
+        isOpen={showTemplateModal}
+        onClose={setShowTemplateModal}
         userDesigns={userDesigns}
-        setShowDesignsModal={setShowDesignsModal}
+        setShowTemplateModal={setShowTemplateModal}
         userDesignsLoading={userDesignsLoading}
       />
     </div>

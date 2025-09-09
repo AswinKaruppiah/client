@@ -7,7 +7,8 @@ import { useRouter } from "next/navigation";
 
 function SideBar() {
   const router = useRouter();
-  const { setShowPremiumModal, setShowDesignsModal } = useEditorStore();
+  const { setShowPremiumModal, setShowDesignsModal, setShowTemplateModal } =
+    useEditorStore();
 
   const handleCreateNewDesign = async () => {
     try {
@@ -70,9 +71,10 @@ function SideBar() {
             onClick={
               menuItem.label === "Billing"
                 ? () => setShowPremiumModal(true)
-                : menuItem.label === "Projects" ||
-                  menuItem.label === "Templates"
+                : menuItem.label === "Projects"
                 ? () => setShowDesignsModal(true)
+                : menuItem.label === "Templates"
+                ? () => setShowTemplateModal(true)
                 : null
             }
             key={index}

@@ -47,6 +47,8 @@ function TemplateModal({
 
       const newDesign = await generateFile(initialDesignData);
       setLoading(false);
+      setActive(null);
+      setDescription("");
     } catch (e) {
       console.log(e);
       setLoading(false);
@@ -86,7 +88,7 @@ function TemplateModal({
                   <h3 className="text-lg font-semibold text-gray-800 mb-4">
                     Available Templates
                   </h3>
-                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <div className="p-4">
                     <DesignList
                       edit={false}
                       setShowDesignsModal={setShowDesignsModal}

@@ -90,6 +90,9 @@ export const useEditorStore = create((set, get) => ({
   showDesignsModal: false,
   setShowDesignsModal: (flag) => set({ showDesignsModal: flag }),
 
+  showTemplateModal: false,
+  setShowTemplateModal: (flag) => set({ showTemplateModal: flag }),
+
   resetStore: () => {
     set({
       canvas: null,
